@@ -34,9 +34,12 @@ def calculate_age(d,m,y):
 		if date.today().month==2:
 			if date.today().year==2000:
 				age_day+=29
+			elif date.today().year%100==0:
+				if date.today().year%400==0:
+					age_day+=29
+				else:
+					age_day+=28
 			elif date.today().year%4==0:
-				age_day+=29
-			elif date.today().year%100==0 and date.today().year%400==0:
 				age_day+=29
 			else:
 				age_day+=28
@@ -54,9 +57,12 @@ def calculate_age(d,m,y):
 		if date.today().month==2:
 			if date.today().year==2000:
 				age_day+=29
+			elif date.today().year%100==0:
+				if date.today().year%400==0:
+					age_day+=29
+				else:
+					age_day+=28
 			elif date.today().year%4==0:
-				age_day+=29
-			elif date.today().year%100==0 and date.today().year%400==0:
 				age_day+=29
 			else:
 				age_day+=28
