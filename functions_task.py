@@ -69,7 +69,7 @@ def calculate_age(d,m,y):
 		print("Your age is %s years, %s months and %s days."%(age_year,age_month,age_day))
 
 y=int(input("Enter the YEAR you were born in: "))
-m=int(input("Enter the MONTH you were born in as a number: "))
+m=int(input("Enter the MONTH you were born in as a NUMBER: "))
 d=int(input("Enter the DAY you were born in: "))
 
 if check_birthdate(d,m,y)==True:
