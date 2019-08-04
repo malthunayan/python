@@ -1,4 +1,4 @@
-print("Hello and welcome to the Python Birthday Calculator!")
+print("Hello and welcome to the Python Birthday Calculator!\n")
 
 def check_birthdate(d,m,y):
 	from datetime import date
@@ -28,7 +28,24 @@ def calculate_age(d,m,y):
 	age_year=date.today().year-y
 	age_month=date.today().month-m
 	age_day=date.today().day-d
-	if age_month<0:
+	if age_month<0 and age_day<0:
+		age_year+=-1
+		age_month+=11
+		if date.today().month==2:
+			if date.today().year==2000:
+				age_day+=29
+			elif date.today().year%4==0:
+				age_day+=29
+			elif date.today().year%100==0 and date.today().year%400==0:
+				age_day+=29
+			else:
+				age_day+=28
+		elif date.today().month==4 or date.today().month==5 or date.today().month==6 or date.today().month==9 or date.today().month==11:
+			age_day+=30
+		else:
+			age_day+=31
+		print("Your age is %s years, %s months and %s days."%(age_year,age_month,age_day))
+	elif age_month<0:
 		age_year+=-1
 		age_month+=12
 		print("Your age is %s years, %s months and %s days."%(age_year,age_month,age_day))
