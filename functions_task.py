@@ -29,7 +29,7 @@ def calculate_age(d,m,y):
 	age_month=date.today().month-m
 	age_day=date.today().day-d
 	if age_month<0 and age_day<0:
-		age_year+=-1
+		age_year-=1
 		age_month+=11
 		if date.today().month==2:
 			if date.today().year%100==0:
@@ -47,11 +47,11 @@ def calculate_age(d,m,y):
 			age_day+=31
 		print("Your age is %s years, %s months and %s days."%(age_year,age_month,age_day))
 	elif age_month<0:
-		age_year+=-1
+		age_year-=1
 		age_month+=12
 		print("Your age is %s years, %s months and %s days."%(age_year,age_month,age_day))
 	elif age_day<0:
-		age_month+=-1
+		age_month-=1
 		if date.today().month==2:
 			if date.today().year%100==0:
 				if date.today().year%400==0:
