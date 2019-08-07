@@ -16,7 +16,7 @@ print('-'*len('receipt')*2+'\n    Receipt\n'+'-'*len('receipt')*2)
 
 x=0
 total_price=[]
-while x<len(price):
+for x in range(len(price)):
 	total_price.append(price[x]*quantity[x])
 	print('%d %s '%(quantity[x],item[x])+str(price[x])+'KD')
 	x+=1
