@@ -1,17 +1,20 @@
 item=[]
 price=[]
 quantity=[]
-x=0
-while not "done" in item:
-	item.append(input('Item (enter "done" when finished): '))
-	if item[x].lower()!='done':
-		price.append(float(input('Price: ')))
-		quantity.append(int(input('Quantity: ')))
-		x=x+1
-item.pop()
 
-receipt={}
-receipt['item name']=item
-receipt['price']=price
-receipt['quantity']=quantity
-print(receipt)
+while True:
+	item.append(input('Item (enter "done" when finished): '))
+	if item[-1].lower()=='done':
+		break
+	price.append(float(input('Price: ')))
+	quantity.append(int(input('Quantity: ')))
+del item[-1]
+
+receipt={'item name':item,'price':price,'quantity':quantity}
+
+print('-'*len('receipt')*2+'\n    Receipt\n'+'-'*len('receipt')*2)
+
+x=0
+while x<len(price):
+	print('%d %s '%(quantity[x],item[x])+str(price[x])+'KD')
+	x+=1
