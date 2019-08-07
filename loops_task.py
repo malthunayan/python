@@ -18,9 +18,9 @@ x=0
 total_price=[]
 for x in range(len(price)):
 	total_price.append(price[x]*quantity[x])
-	print('%d %s '%(quantity[x],item[x])+str(price[x])+'KD')
+	print('%d %s %.3fKD'%(quantity[x],item[x],price[x]))
 	x+=1
 print('-'*len('receipt')*2)
 
 
-print('Total: '+str(sum(total_price))+'KD')
+print('Total: %.3fKD'%(sum(total_price)))
