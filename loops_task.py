@@ -14,7 +14,6 @@ receipt={'item name':item,'price':price,'quantity':quantity}
 
 print('-'*len('receipt')*2+'\n    Receipt\n'+'-'*len('receipt')*2)
 
-x=0
 total_price=[]
 for x in range(len(price)):
 	total_price.append(price[x]*quantity[x])
