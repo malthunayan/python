@@ -8,7 +8,7 @@ while True:
 	item.append({'name':name,'price':price,'quantity':quantity})
 
 print(item)
-print('-'*len('receipt')*2+'\n'+' '*3+'Receipt\n'+'-'*len('receipt')*2)
+print('-'*len('receipt')*2+'\n    Receipt\n'+'-'*len('receipt')*2)
 
 x=0
 total_price=[]
