@@ -1,25 +1,21 @@
 item=[]
-price=[]
-quantity=[]
-
 while True:
-	item.append(input('Item (enter "done" when finished): '))
-	if item[-1].lower()=='done':
+	name=input('Item (enter "done" when finished): ')
+	if name.lower()=='done':
 		break
-	price.append(float(input('Price: ')))
-	quantity.append(int(input('Quantity: ')))
-del item[-1]
+	price=float(input('Price: '))
+	quantity=int(input('Quantity: '))
+	item.append({'name':name,'price':price,'quantity':quantity})
 
-receipt={'item name':item,'price':price,'quantity':quantity}
+print(item)
+print('-'*len('receipt')*2+'\n'+' '*3+'Receipt\n'+'-'*len('receipt')*2)
 
-print('-'*len('receipt')*2+'\n    Receipt\n'+'-'*len('receipt')*2)
-
+x=0
 total_price=[]
-for x in range(len(price)):
-	total_price.append(price[x]*quantity[x])
-	print('%d %s %.3fKD'%(quantity[x],item[x],price[x]))
+for x in range(len(item)):
+	total_price.append(item[x]['price']*item[x]['quantity'])
+	print('%d %s %.3fKD'%(item[x]['quantity'],item[x]['name'],item[x]['price']))
 	x+=1
+
 print('-'*len('receipt')*2)
-
-
 print('Total: %.3fKD'%(sum(total_price)))
