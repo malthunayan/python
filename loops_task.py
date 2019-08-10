@@ -9,10 +9,10 @@ while True:
 
 print('-'*len('receipt')*2+'\n   Receipt\n'+'-'*len('receipt')*2)
 
-total_price=[]
-for x in range(len(items)):
-	total_price.append(items[x]['price']*items[x]['quantity'])
-	print('%d %s %.3fKD'%(items[x]['quantity'],items[x]['name'],items[x]['price']))
+total_price=0
+for item in items:
+	total_price+=item['price']*item['quantity']
+	print('%d %s %.3fKD'%(item['quantity'],item['name'],item['price']))
 
 print('-'*len('receipt')*2)
-print('Total: %.3fKD'%(sum(total_price)))
+print('Total: %.3fKD'%(total_price))
